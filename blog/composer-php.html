@@ -62,14 +62,14 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Linguagem, ou o mundo?</h1>
-                        <h2 class="subheading">Cada escolha tem o seu custo, cada especilista tem seu preço.</h2>
-                        <p class="post-meta">Junho 25, 2015</p>
+                        <h1>Composer chega de includes</h1>
+                        <h2 class="subheading">Como gerenciar as dependências do seu projeto de maneira fácil e organizada .</h2>
+                        <p class="post-meta">Junho 26, 2015</p>
                     </div>
                 </div>
             </div>
@@ -81,33 +81,51 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>O mercado de desenvolvimento de softwares esta muito amplo e com este cenário as oportunidades estão em todo
-                    lugar e consequentemente.. tudo é mais competitivo.
-                    Nas experiências que já tive, conheci os dois lados do desenvolvimento de software: Especialista em uma linguagem e 
-                    Especialista em desenvolvimento de software. 
-                    </p>
+                    <div align="center">
+                        <img src="https://getcomposer.org/img/logo-composer-transparent4.png">
+                    </div>
+                    <p>Composer é um gerenciador de dependencias para php. Permite você declarar as dependencias do seu projeto e 
+                    instala-las no seu projeto.<br>
+                    Você precisará de 3 coisinhas para usar:<br><hr>
                     
-                    <p>Um dos maiores problemas em ser um especialista em uma linguagem.. é que você não vai conseguir abrir muito o seu leque de experiências e habilidades, já que você conhece muito bem como funciona em um determinado mundo, seja ele
-                    python, php, .net, ruby, rust ou o que for.. Isto faz com que você só consiga trabalhos segmentados em um determinado ramo.
+                        
+                            Um arquivo <i>composer.json</i> com as declarações de dependencias por ex:
+                            <pre class=" language-javascript"><code class=" language-javascript"><span class="token punctuation">{</span>
+    <span class="token string">"require"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"monolog/monolog"</span><span class="token punctuation">:</span> <span class="token string">"1.2.*"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+                    <hr>    
+                        
+                            Instalar o executável do composer:
+                            <pre class=" language-bash"><code class=" language-bash">curl <span class="token operator">-</span>sS https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>getcomposer<span class="token punctuation">.</span>org<span class="token operator">/</span>installer <span class="token operator">|</span> php</code></pre>
+                            <br>
+                            O instalador irá fazer alguns checks nas suas configurações do php e depois fará o download do arquivo <i>composer.phar</i> no diretório do seu projeto.
+                        
+                        <hr>
+
+                        Instalar as dependencias:
+                            <pre class=" language-bash"><code class=" language-bash">php composer<span class="token punctuation">.</span>phar install</code></pre>
+
+                        O composer irá criar um diretório chamado vendor dentro diretório do seu projeto com as dependencias declaradas no <i>composer.json</i> e Pronto!
+
+                        <hr>
+
+                        Hora de usar:<br>
+                        Bem além de instalar as dependencias do seu projeto, o composer prepara um autoloader para você incluir no bootstrap (pré-processamento) do seu projeto:
+                        <pre class=" language-php"><code class=" language-php"><span class="token keyword">require</span> <span class="token constant">__DIR__</span> <span class="token punctuation">.</span> <span class="token string">'/vendor/autoload.php'</span><span class="token punctuation">;</span></code></pre> <br>
+
+                        Feito isto, você pode usar as suas dependencias sem choro :D<br>
+
+                        <pre class=" language-php"><code class=" language-php"><span class="token variable">$log</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Monolog<span class="token punctuation">\</span>Logger</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$log</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">pushHandler<span class="token punctuation">(</span></span><span class="token keyword">new</span> <span class="token class-name">Monolog<span class="token punctuation">\</span>Handler<span class="token punctuation">\</span>StreamHandler</span><span class="token punctuation">(</span><span class="token string">'app.log'</span><span class="token punctuation">,</span> Monolog\<span class="token package">Logger</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">WARNING</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$log</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">addWarning<span class="token punctuation">(</span></span><span class="token string">'Foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
                     </p>
-                    
-                    <p>Então para contornar este "problema", você deve aumentar o seu network, participar de eventos, palestras e contribuir frequentemente para a comunidade
-                    da linguagem que você escolheu, criando novas ferramentas, ou melhorando as que
-                    já existem. Isto vai fazer com que você seja reconhecido pela sua paixão por determinada linguagem.
-                    </p>    
-                    
-                    <p>Por outro lado um Especialista em desenvolvimento tem a dificil missão de 
-                    ser ótimo naquilo que faz, isto irá exigir um "bocado" de soft skills e habilidade de si adaptar a qualquer cenário.
-                    </p>
-                    <p>Para se tornar um Especialista em desenvolvimento, é necessário anos e anos
-                    de dedicação e estudo e uma base sólida nas questões mais básicas do desenvolvimento de software e também como as ferramentas trabalham, como executam suas tarefas como por ex: como funciona um banco de dados relacional, ou até mesmo um gerenciador de filas.
-                    </p>
-                    <p>Um ponto importante é saber analisar o problema e desenhar uma solução que seja durável. (vou escrever outro artigo sobre software duráveis :D)
-                    Com estas habilidades a escolha da linguagem será somente uma questão de
-                    escolha de ferramentas. Claro que isso vai depender do tipo de problema, estrutura ou se a empresa/cliente exige alguma linguagem específica. 
-                    </p>
-                    <p>Estes são os dois caminhos, você deve escolher um deles, traçar seus objetivos e se dedicar naquilo que você decidiu fazer, assim você trabalhará feliz e com um salário bem legal. 
-                    </p>
+
+                    <p><a href="https://getcomposer.org/doc/01-basic-usage.md">Clique aqui saber mais sobre o composer</a></p>
+                    <p>Até a próxima...</p>
                 </div>
             </div>
         </div>
