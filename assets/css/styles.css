@@ -11,6 +11,7 @@ body {
   font-family: 'Lato', arial, sans-serif;
   color: #434343;
   background: #dae3e7;
+  background-image: url("../images/header-bg.jpg");
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -535,5 +536,15 @@ iframe {
 @media (min-width: 1400px) {
   .container {
     width: 1360px;
+  }
+}
+
+.row-0 {
+  .make-row();
+  .col-0-0 {
+    .make-md-column(6);
+  }
+  .col-0-1 {
+    .make-md-column(2);
   }
 }
