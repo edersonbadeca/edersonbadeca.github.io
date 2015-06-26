@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog</title>
+    <title>Ederson Badeca Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +51,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="../index.html">Home</a>
+                        <a href="index.html">Artigos</a>
                     </li>
                 </ul>
             </div>
@@ -62,69 +62,77 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/contact-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Lets take a coffe..</h1>
-                        <hr class="small">
-                        <span class="subheading">And relax.</span>
+                    <div class="post-heading">
+                        <h1>Xdebug melhor ferramenta de debug para PHP</h1>
+                        <h2 class="subheading">print_r();die nunca mais</h2>
+                        <p class="post-meta">Junho 26, 2015</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Especialista em uma linguagem, ou especialista em desenvolvimento?
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Cada escolha tem o seu custo, cada especilista tem seu preço.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Junho 24, 2015</p>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>A maioria dos programadores PHP que estão começando ou até mesmo os mais experientes, as vezes sofrem para
+                    encontrar um erro na lógica, bug ou rastrear alguma transação.
+                    Isto deve-se ao fato de utilizar comandos de print como var_dump(), print_r(), echo ou qualquer comando equivalente para validar o valor das variáveis.
+                    </p>
+                    
+                    <p>O xdebug, é uma ferramenta que permite incluir breakpoints no seu código e executar a depuração.
+                    Existem outras aplicações para esta ferramenta também, um exemplo clássico é de profilling, ou seja,
+                    você quer saber o desempenho da sua aplicação, tempo de processamento de cada transação dentro do sistema e etc..
+                    </p>
+
+                    <p>
+                    <h3>
+                        Bora começar?
+                    </h3>
+                    Bom, eu estou usando nesse momento o meu laptop com ubuntu, por isto vou colocar os comandos para instalar no ubuntu okay? Se vocês precisarem de outro sistema operacional, me avise no twitter blza?
+                    </p>
+                    <p>Vou presumir que você já tenha instalado seu ambiente de desenvolvimento PHP. Eu particularmente não gosto de ferramentas como wamp,lamp,xampp ... gosto de ter controle do que eu estou usando.</p>
+
+                    <p>Caso você esteja usando alguma dessas ferramentas, basta habilitar o xdebug nas opções do PHP. 
+                    Se você estiver instalado o php5 manualmente igual a mim então o próximo passo é instalar a biblioteca xdebug no seu env, abra o terminal e digite:<br>
+                    <pre>$ apt-get install php5-xdebug</pre>
+                    
+                    Após este commando, você já tera instalado o xdebug na maquina :D<br>
+                    Se quiser conferir, ainda no terminal, execute o commando:<br><br>
+                    <pre>php -i |grep xdebug</pre><br>
+                    Este comando irá retorna as configurações definidas por padrão ao xdebug.
+                    </p> 
+                    <p>Um dos resultados deste comando deve trazer o caminho de arquivo chamado : <b>20-xdebug.ini</b><br>
+                    Abra este arquivo com (permissões de sudo) e acrescente as seguintes configurações:
+                    <pre>
+zend_extension=/usr/lib/php5/20121212/xdebug.so
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_mode=req
+xdebug.remote_host=127.0.0.1
+xdebug.remote_port=9000
+                    </pre> 
+                    <h3>Atenção</h3>
+                    O caminho da variável zend_extension pode mudar, dependendo da versão que você esta usando. Geralmente fica no diretório:<br>
+                    <i>/usr/lib/php5/[um-numero]/xdebug.so</i>
+                    </p>
+                    <p>Pronto! você já pode incluir breakpoints nos seus códigos com a sua IDE ou editor de texto favorito.
+                    Eu quando estou desenvonvendo, costumo utilizar o vim, mas existem boas IDEs para PHP, como por exemplo: <br>
+                    NetBeans e Phpstorm.
+                    </p>
+
+                    <p>Espero que tenham gostado, qualquer dúvida me envie um e-mail e até a próxima.</p>                   
+ 
                 </div>
-                <hr>
-                 <div class="post-preview">
-                    <a href="composer-php.html">
-                        <h2 class="post-title">
-                            Composer - Gerenciador de dependencias para PHP
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Chega de includes nos seus códigos.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Junho 25, 2015</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="xdebug.html">
-                        <h2 class="post-title">
-                            Xdebug - melhor ferramenta para debugar php
-                        </h2>
-                        <h3 class="post-subtitle">
-                            <pre>print_r();die(); nunca mais</pre>.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Junho 26, 2015</p>
-                </div>
-                <hr>
-                <!-- Pager
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>-->
             </div>
         </div>
-    </div>
+    </article>
 
     <hr>
 
@@ -135,7 +143,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="#">
+                            <a href="https://twitter.com/edersonbadeca">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -143,7 +151,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/edersonbadeca">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -151,7 +159,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://github.com/edersonbadeca">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
