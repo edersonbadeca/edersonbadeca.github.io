@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog</title>
+    <title>Ederson Badeca Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +51,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="../index.html">Home</a>
+                        <a href="index.html">Artigos</a>
                     </li>
                 </ul>
             </div>
@@ -62,93 +62,66 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Lets take a coffe..</h1>
-                        <hr class="small">
-                        <span class="subheading">And relax.</span>
+                    <div class="post-heading">
+                        <h1>Python3 e o pyvenv</h1>
+                        <h2 class="subheading">virtualizando seu ambiente</h2>
+                        <p class="post-meta">Julho 3, 2015</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Especialista em uma linguagem, ou especialista em desenvolvimento?
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Cada escolha tem o seu custo, cada especilista tem seu preço.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Junho 24, 2015</p>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <p> 
+                  Virtualenv é um pacote Python que irá configurar um ambiente Python "virtual" em um diretório específico.
+                  </p>
+                  <p>
+                      Este ambiente virtual vai manter sua versão python e módulos separados da instalação do Python do sistema:
+                      <pre>
+$ virtualenv env            # create new environment in "env" folder
+$ source env/bin/activate   # Active "env"
+(env) /project$ deactivate  # Deactivate env 
+
+                      </pre>
+                  </p>
+                  <p>
+                      Mas o Virtualenv não tem "fair play" com Python 3, por isso é melhor não tentar usá-lo.
+                  </p>
+                  <h3>pyvenv-3.4</h3>
+                  <p>
+                      A Versão do Python 3.4 do pyvenv incluirá pip, tornando o gerenciamento de ambientes virtuais simples novamente, e agora nativa.
+                  </p>
+                  <h3>Usando o pyvenv-3.4</h3>
+                  <p>
+                      <pre>
+$ pyvenv-3.4 djenv          # create django virtual env
+$ source djenv/bin/activate # activate it
+(djenv) $ which pip         # check pip points to the right place
+/home/me/djenv/bin/pip
+(djenv) $ pip freeze        # check our environment is clean (no output)
+(djenv) $ pip install django django-extensions     # install django dependencies
+(djenv) $ pip freeze        # see our installed dependencies
+Django==1.6.1
+django-extensions==1.2.5
+six==1.4.1
+(djenv) $ django-admin.py startproject newproject  # create new django project
+(djenv) $ pip freeze > newproject/requirements.txt # save dependencies into project
+                      </pre>
+                  </p>
+                  <p>Agora com python 3.4 ficou mais simples virtualizar seus envs.</p>
                 </div>
-                <hr>
-                 <div class="post-preview">
-                    <a href="composer-php.html">
-                        <h2 class="post-title">
-                            Composer - Gerenciador de dependencias para PHP
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Chega de includes nos seus códigos.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Junho 25, 2015</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="xdebug.html">
-                        <h2 class="post-title">
-                            Xdebug - melhor ferramenta para debugar php
-                        </h2>
-                        <h3 class="post-subtitle">
-                            <pre>print_r();die(); nunca mais</pre>.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Junho 26, 2015</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="python-flask-api.html">
-                        <h2 class="post-title">
-                            Escrevendo uma API RESTFUL em Python com Flask
-                        </h2>
-                        <h3 class="post-subtitle">
-                            <pre>Simples e robusta</pre>.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Junho 29, 2015</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="python3-pyvenv.html">
-                        <h2 class="post-title">
-                            Python3 e o pyvenv
-                        </h2>
-                        <h3 class="post-subtitle">
-                            <pre>Não precisa mais daquelas libs marotas</pre>.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Julho 3, 2015</p>
-                </div>
-                <hr>
-                <!-- Pager
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>-->
             </div>
         </div>
-    </div>
+    </article>
 
     <hr>
 
@@ -159,7 +132,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="#">
+                            <a href="https://twitter.com/edersonbadeca">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -167,7 +140,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/edersonbadeca">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -175,7 +148,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://github.com/edersonbadeca">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
