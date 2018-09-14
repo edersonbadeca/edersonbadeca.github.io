@@ -4,10 +4,10 @@ A highly motivated and resourceful technology leader – architect & mentor - wi
 # Check my blog
 [Time to relax](/blog)
 
-**Last Projects
+Last Projects
 Project: Continuous delivery and Continuous Integration
 
-Company: CargoX** Jan *[2018 - Apr 2018]*
+Company: CargoX Jan *[2018 - Apr 2018]*
 
 Company needed a good way to integrate, delivery and test the bunch of microservices that 
 make up the platform. 
