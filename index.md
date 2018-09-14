@@ -1,7 +1,7 @@
 ### About Me ###
 A highly motivated and resourceful technology leader – architect & mentor - with over seventeen years of experience in software solutions across technology, retail, government, publishing, financial and manufacturing industries. Solid background in working with executive leadership to develop IT roadmap for the organization, quantifying & setting annual organization & technology improvement goals, proving ROI for projects with multimillion dollar budgets and leading agile teams to develop robust & highly scalable e-commerce applications. 
 
-# Check my blog
+# Checkout my blog
 [Time to relax](/blog)
 
 Last Projects
@@ -68,3 +68,6 @@ In the logistic market in Brazil, to pay the trucker, it’s needed some documen
 * Ruby
 * Elixir
 * NodeJs
+
+#### Hire me
+You can send a message [here](https://www.linkedin.com/in/ederson-badeca-72660328/)
